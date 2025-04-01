@@ -1,0 +1,15 @@
+* {
+    --main-bg-color: #FDF0E7;
+    --second-bg-color: #EA5863;
+    --third-bg-color: #FE9063;
+    --main-text-color: #EA5863;
+    --second-text-color: #FE9063;
+    --main-font-family: 'Montserrat', sans-serif;
+    --secondary-font-family: 'Manrope', sans-serif;
+}
+
+
+article label {
+    font-family: var(--main-font-family);
+    font-weight: bold;
+}

@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+
+/*
+Default CSS for all pages + variables
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    --main-bg-color: #FDF0E7;
+    --second-bg-color: #EA5863;
+    --third-bg-color: #FE9063;
+    --main-text-color: #EA5863;
+    --second-text-color: #FE9063;
+    --main-font-family: 'Montserrat', sans-serif;
+    --secondary-font-family: 'Manrope', sans-serif;
+}
+
+/*
+Style for the body of all pages
+*/
+body {
+    font-family: var(--main-font-family);
+    background: var(--main-bg-color);
+    width: 100%;
+}
+
+/*
+Style for circles in the background
+*/
+.circle {
+    position: absolute;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 100%;
+    box-shadow: 0px 4px 25px 0px #FFF;
+    z-index: -100;
+}
+
+/*
+Style for the top-right circle in the background
+*/
+.circle:nth-child(1) {
+    top: 5vh;
+    right: 8vw;
+    background: linear-gradient(110deg, #FFFFFF 0%, #27C7D4 100%);
+}
+
+/*
+Style for the bottom-left circle in the background
+*/
+.circle:nth-child(2) {
+    bottom: 3vh;
+    left: 25vw;
+    background: linear-gradient(45deg, #FFF 0%, #27C7D4 100%);
+}
+
+/*
+Style for the top-left circle in the background
+*/
+.circle:nth-child(3) {
+    top: 20vh;
+    left: 3vw;
+    background: linear-gradient(45deg, var(--second-bg-color) 0%, var(--third-bg-color) 100%);
+    box-shadow: 0px 4px 25px 0px var(--third-bg-color);
+}
+
+/*
+Style for the bottom-right circle in the background
+*/
+.circle:nth-child(4) {
+    bottom: 14vh;
+    right: 3vw;
+    background: linear-gradient(45deg, var(--second-bg-color) 0%, var(--third-bg-color) 100%);
+    box-shadow: 0px 4px 25px 0px var(--third-bg-color);
+}
+
+/*
+Default style for all single sections in a page
+*/
+.page, .centerPage {
+    width: 100%;
+    min-height: 100vh;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.centerPage {
+    justify-content: center;
+}
+
+/*
+Style for the div around the form to create a new account
+*/
+.creation, .connection-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100vw - 2*120px);
+    height: calc(100vh - 2*79px);
+    border-radius: 50px 300px;
+    background: var(--main-bg-color);
+    box-shadow: 0px 0px 64px -24px var(--second-bg-color);
+}
+
+/*
+Similar to the previous one but with a different width and height
+*/
+.connection-area {
+    width: 40vw;
+    height: 80vh;
+    justify-content: center;
+}
+
+/*
+Style for the title of the form to create a new account
+*/
+.creation h1, .connection-area h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-text-color);
+    text-align: center;
+    text-shadow: 0px 4px 4px var(--third-bg-color);
+    font-family: var(--main-font-family);
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+/*
+Style for the back button in the form to create a new account
+*/
+.back {
+    position: absolute;
+    top: 12vh;
+    left: 8vw;
+    background: transparent;
+    border: none;
+    outline: none;
+    z-index: 100;
+    rotate: 180deg;
+    text-decoration: none;
+    color:#FDF0E7;
+    padding: 1vh 1.5vh;
+    font-size: 2rem;
+    background-color: var(--second-bg-color);
+    border-radius: 100%;
+    transition: all 0.3s;
+    scale: 1;
+    cursor: pointer;
+}
+
+/*
+Style for the back button in the form to create a new account when the mouse is over
+*/
+.back:hover {
+    background-color: #FDF0E7;
+    color: var(--second-bg-color);
+    box-shadow: 0px 0px 25px -5px var(--third-bg-color);
+    transition: all 0.3s;
+    scale: 1.1;
+}
+
+/*
+Style for the creation form
+*/
+form {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.creation form {
+    margin-top: 5vh;
+    height: 80%;
+}
+
+/*
+Style for inputs in the form
+*/
+input[type=text], input[type=password] {
+    text-align: center;
+    border-radius: 100px;
+    height: 5vh;
+    width: 25vw;
+    padding: 0 5vw;
+    border: none;
+    box-shadow: 0px 4px 4px var(--second-bg-color);
+    transition: 0.3s;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: var(--second-text-color);
+    font-family: 'Manrope', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+input[type="password"]:-webkit-autofill, input[type="text"]:-webkit-autofill {
+    filter: none; /* needed for firefox! */
+    box-shadow: 0 -100px 0 100px rgb(255, 255, 255) inset, 0px 4px 4px var(--second-bg-color);
+}
+
+/*
+Style of animation for inputs in the form
+*/
+input[type=text]:focus, input[type=password]:focus {
+    outline: none;
+    box-shadow: 0px 4px 4px var(--third-bg-color);
+}
+
+input[type="password"]:focus:-webkit-autofill, input[type="text"]:focus:-webkit-autofill {
+    filter: none; /* needed for firefox! */
+    box-shadow: 0 -100px 0 100px rgb(255, 255, 255) inset, 0px 4px 4px var(--third-bg-color);
+}
+
+/*
+Style for the div which contains the eye button and the input
+*/
+.password, .confirm {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: min-content;
+    height: 100%;
+}
+
+/*
+Style for the eye icon which allows to show the password
+*/
+.eye {
+    right: 1vw;
+    background: transparent;
+    border: none;
+    outline: none;
+    z-index: 100;
+    position: absolute;
+}
+
+/*
+Style of the image of eye button
+*/
+.eye img {
+    width: 30px;
+    height: 30px;
+}
+
+/*
+Style for labels in the form
+*/
+form label {
+    color: var(--second-bg-color);
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(234, 88, 99, 0.50);
+    font-family: var(--secondary-font-family);
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 5px;
+}
+
+/*
+Style for the submit button in the form
+*/
+input[type="submit"] {
+    width: 12vw;
+    height: 8vh;
+    border: transparent;
+    border-radius: 360px;
+    background: linear-gradient(180deg, var(--second-bg-color) 0%, var(--third-bg-color) 100%);
+    box-shadow: 0px 0px 60px -20px #FF2A6D;
+    color: #000;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+/*
+Style of animation for the submit button in the form
+*/
+input[type=submit]:hover {
+    color: #FFF;
+    /* text-shadow: 5px 5px 5px black; */
+    background-color: var(--third-bg-color);
+    box-shadow: 0px 0px 60px -20px var(--third-bg-color);
+    transition: 0.3s;
+    transform: scale(1.1);
+    animation: shake infinite 0.5s linear alternate both;
+}
+
+/*
+Style for all the inputs and labels in the form
+*/
+.creation .all_inputs_labels {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*
+The form was divided in two parts to make it more like the wireframe
+*/
+.creation form .form_1, .creation form .form_2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    height: 80%;
+}
+
+/*
+Style for all groups of inputs and labels in the form (each group contains a label and an input)
+*/
+.label_input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*
+Shake animation for the submit button in the form (It's simple but it works)
+*/
+@keyframes shake {
+    from {
+        rotate: 2deg;
+    }
+    to {
+        rotate: -2deg;
+    }
+}
+
+/* 
+Style for the title of index page
+*/
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: var(--main-text-color);
+    text-shadow: 0px 4px 4px var(--third-bg-color);
+    font-size: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+/* 
+Style for the section under the navigation bar
+Section is composed with title and an article
+*/
+section {
+    margin-top: 50px;
+    width: 80%;
+    box-shadow: 0px 0px 32px -5px var(--second-bg-color);
+    border-radius: 4.6vh 27.8vh 0px 0px;
+    background-color: #FDF0E7;
+    min-height: 100vh;
+    height: max-content;
+    padding-bottom: 10vh;
+}
+
+/* 
+Article center alignement
+*/
+article {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.export {
+    width: 80%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 5vh 0;
+}
+
+.chart-container button, .pie-chart-container button, .export button {
+    width: 15vw;
+    height: 8vh;
+    border: transparent;
+    border-radius: 360px;
+    background: linear-gradient(180deg, var(--second-bg-color) 0%, var(--third-bg-color) 100%);
+    box-shadow: 0px 0px 60px -20px #FF2A6D;
+    color: #000;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.4vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#dateRangeValidate:hover, #dateRangeReset:hover, .chart-container button:hover, .pie-chart-container button:hover, .export button:hover {
+    scale: 1.1;
+    color: #FFF;
+    box-shadow: 0px 0px 20px 0px var(--third-bg-color);
+    transition: all 0.2s;
+}
+
+#dateRangeValidate, #dateRangeReset {
+    width: 5vw;
+    height: 5vh;
+    border: transparent;
+    border-radius: 360px;
+    background: var(--second-bg-color);
+    box-shadow: 0px 0px 60px -20px #FF2A6D;
+    color: #fff;
+    text-align: center;
+    font-family: Manrope, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 0.7vw;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.accord {
+    width: 30%;
+    height: 5%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 5vh;
+}
+
+.accord label {
+    font-weight: bold;
+}
+
+.accord input[type="checkbox"] {
+    border-radius: 50px;
+    background-color: #FDF0E7;
+    border: none;
+    outline: none;
+}

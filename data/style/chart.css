@@ -1,0 +1,42 @@
+/*
+Default CSS for all pages + variables
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    --main-bg-color: #FDF0E7;
+    --second-bg-color: #EA5863;
+    --third-bg-color: #FE9063;
+    --main-text-color: #EA5863;
+    --second-text-color: #FE9063;
+    --main-font-family: 'Montserrat', sans-serif;
+    --secondary-font-family: 'Manrope', sans-serif;
+}
+
+#myChart, #myPieChart, #myBarChart {
+    width: 100%;
+    max-width: 50vw;
+    height: 50vh;
+    margin: 0 auto;
+    border-radius: 50px;
+    padding: 3vh 3vw;
+    box-shadow: 0 0 5px var(--main-text-color);
+}
+
+#myPieChart {
+    margin: 5vh 0;
+}
+
+.chart-container {
+    width: 80%;
+    height: 70vh;
+}
+
+.chart-container, .pie-chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}

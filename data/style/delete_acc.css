@@ -1,0 +1,55 @@
+* {
+    --main-bg-color: #FDF0E7;
+    --second-bg-color: #EA5863;
+    --third-bg-color: #FE9063;
+    --main-text-color: #EA5863;
+    --second-text-color: #FE9063;
+    --main-font-family: 'Montserrat', sans-serif;
+    --secondary-font-family: 'Manrope', sans-serif;
+}
+
+form {
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #FDF0E7;
+    border-radius: 100px;
+    box-shadow: 0px 4px 25px 0px #FFF;
+    z-index: 100;
+}
+
+form select {
+    background-color: var(--second-bg-color);
+    outline: none;
+    border: none;
+    border-radius: 100px;
+    padding: 1.5vh 10vw;
+    font-family: var(--main-font-family);
+    text-align: center;
+    color: var(--main-bg-color);
+    font-weight: bold;
+    box-shadow: 0px 0px 5px 1px var(--third-bg-color);
+    font-size: 1rem;
+    text-align: left;
+}
+
+form select option {
+    text-align: left;
+}
+
+.delete-zone {
+    width: 80%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.back {
+    top: 30vh;
+    left: 28vw;
+}

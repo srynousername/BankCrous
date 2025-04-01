@@ -1,0 +1,254 @@
+* {
+    --main-bg-color: #FDF0E7;
+    --second-bg-color: #EA5863;
+    --third-bg-color: #FE9063;
+    --main-text-color: #EA5863;
+    --second-text-color: #FE9063;
+    --main-font-family: 'Montserrat', sans-serif;
+    --secondary-font-family: 'Manrope', sans-serif;
+}
+
+/* 
+Alignement for header to center elements (nav and profil)
+*/
+header {
+    top: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 80%;
+}
+
+/* 
+Style for navigation bar
+*/
+nav {
+    border-radius: 10px 50px 10px 50px;
+    width: 100%;
+    margin-right: 3%;
+    box-shadow: 0px 0px 32px -5px #EA5863;
+    text-shadow: 0px 4px 4px #FE9063;
+    background-color: #FDF0E7;
+}
+
+/* 
+Make space between menu button and format correctly the size of them
+*/
+.menu {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    height: 5vw;
+    position: relative;
+}
+
+/* 
+Style for menu from the navbar
+*/
+.menu > a {
+    font-family: 'Montserrat', sans-serif;
+    color: #EA5863;
+    font-size: 1.4vw;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+/* 
+Modify hover button menu
+*/
+.menu:hover > a {
+    color: #27C7D4;
+    text-shadow: 0px 4px 4px #61f2ff;
+    cursor: pointer;
+    transition: 0.5s;
+    rotate: -5deg;
+}
+
+/* 
+Alignement and remove decoration for sub-menu (because we use ul/li element)
+*/
+.menu-list {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 
+Style for ul sub-menu
+It contains 2 li elements and each one contains a link to a page
+*/
+.sub-menu, .sub-menu-end {
+    margin-top: -75px;
+    z-index: 1;
+    display: none;
+    position: absolute;
+    width: 10vw;
+    height: 20vh;
+    left: 0;
+    border-radius: 25px 150px 150px 150px;
+    background: #FDF0E7;
+    box-shadow: 0px 0px 64px -12px #EA5863;
+}
+
+/*
+Style for the li elements in the sub-menu which contains the links (a tag) to the pages
+*/
+.sub-menu a,
+.sub-menu-end a {
+    color: black;
+    margin: 0;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+/*
+Style for the sub-menu when the mouse is over the menu
+When the mouse is over the menu, the sub-menu is displayed
+gap is the space between the 2 li elements in the sub-menu
+*/
+.menu:hover .sub-menu,
+.sub-menu-end {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+    align-items: center;
+    list-style-type: none;
+    top: 8vh;
+}
+
+/* 
+Style for the sub-menu when the mouse is over the menu
+When the mouse is over the menu, the sub-menu is displayed
+*/
+.menu:hover .sub-menu-space {
+    display: block;
+}
+
+.sub-menu-space {
+    position: absolute;
+    left: 0;
+    display: none;
+    margin-top: 369px;
+    border-radius: 50px 150px 150px 150px;
+    height: 325px;
+    width: 245px;
+}
+
+.menu:hover .sub-menu {
+    animation: slide-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/*
+New class which permits to apply the end animation for the sub-menu when the mouse is not over
+*/
+.sub-menu-end {
+    animation: slide-bottom-reverse 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/* 
+Style for profil icon
+*/
+.profil {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 100%;
+    box-shadow: 0px 0px 32px -5px #EA5863;
+    background-color: #FDF0E7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 
+Center the profil into the div (circle) 
+*/
+.profil a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 
+Profil icon (head)
+*/
+.profil-head {
+    width: 18px;
+    height: 18px;
+    border-radius: 11px;
+    border: 3px solid #EA5863;
+    box-shadow: 0px 0px 4px 0px #FE9063;
+    transition: 0.5s;
+}
+
+/* 
+Profil icon (body)
+*/
+.profil-body {
+    margin-top: -3px;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px 10px 30px 30px;
+    border: 3px solid #EA5863;
+    box-shadow: 0px 0px 4px 0px #FE9063;
+    transition: 0.5s;
+}
+
+/* 
+Style for profil icon
+*/
+.profil:hover {
+    cursor: pointer;
+}
+
+/* 
+Small animation when the profile is hovered over (translate the head)
+*/
+.profil:hover .profil-head {
+    border: 3px solid #27C7D4;
+    box-shadow: 0px 0px 4px 0px #61f2ff;
+    translate: 5px;
+    transition: 0.5s;
+}
+
+/* 
+Small animation when the profile is hovered over (rotate the body)
+*/
+.profil:hover .profil-body {
+    border: 3px solid #27C7D4;
+    box-shadow: 0px 0px 4px 0px #61f2ff;
+    rotate: 5deg;
+    transition: 0.5s;
+}
+
+/* Animations */
+@keyframes slide-bottom {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(100px);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-bottom-reverse {
+    0% {
+        transform: translateY(100px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+}
